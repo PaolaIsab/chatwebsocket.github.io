@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <title>Chat Socket.io</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  
+</head>
+<body>
+  
+
+
+<br>
+  <div id="registro">
+    <br><br><br><br><br><br><br><br><br>
+    <div class=" p-5 text-center rounded " style="background-color:white; width: 500px; margin-left: auto;
+    margin-right: auto;" >
+    <h3>Ingresar</h3>
+    <form accept-charset = "utf-8"  id="login-form">
+      <input  type="text-center" class=" inputp rounded-pill mb-3 ms-3" id="correo" placeholder="Correo" value=""><br>
+      <input type="text-center" class=" inputp rounded-pill mb-3 ms-3" id="usuario" placeholder="Usuario" value=""><br>
+    
+      <input class="btn btn-primary" id="send2" value="Enviar" onclick="obteneruser()">
+    </form>
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+  </div>  
+
+    
+      <!--Codigo del chat-->
+      <br>
+      <div class="row container-fluid ">
+
+        <div class="col-4 p-3  rounded " style="background-color:#031426;">
+          <h1 class="" style="color: white;">Usuarios en Linea:</h1>
+          <div id="usuarios" class="rounded">
+            <div id="userline"></div>
+            
+          </div>
+        </div>
+
+        <div class="col-sm-8 bg-light p-3 border">
+  
+          <h1 class="text-center">iChat 💬</h1>
+          <div class="main">
+          <div id="chat-container">
+
+            <div class="row me-2">
+              <div class="col-2">
+                <br>
+                <i class="fas fa-user-circle fa-3x   mb-3 ms-3"></i>
+              </div>
+              <div class="col-10">
+                <br>
+                <input type="text " class="inputp rounded-pill" id="username" placeholder="Username" readonly="readonly">
+              </div>
+          </div>
+          
+              
+            
+
+            <br>
+            <div id="chat-window" class="rounded">
+              <div id="output"></div>
+              <div id="actions"></div>
+              
+            </div>
+            <br>
+            <div class="row me-4">
+                <div class="col-11">
+                  <input type="text-center" class=" inputp rounded-pill mb-3 ms-3" id="message" placeholder="Message">
+                </div>
+                <div class="col-1">
+                  <button id="send" class=" buttonenv rounded-pill mb-4 me-3"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill-rule="evenodd" d="M1.513 1.96a1.374 1.374 0 011.499-.21l19.335 9.215a1.146 1.146 0 010 2.07L3.012 22.25a1.374 1.374 0 01-1.947-1.46L2.49 12 1.065 3.21a1.374 1.374 0 01.448-1.25zm2.375 10.79l-1.304 8.042L21.031 12 2.584 3.208l1.304 8.042h7.362a.75.75 0 010 1.5H3.888z"></path></svg></button>
+                </div>
+            </div>
+            
+            
+          </div>
+        </div>
+        
+        
+      </div>
+    </div>
+    <script src="bootstrap.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="chat.js"></script>
+  </body>
+
+</html>
